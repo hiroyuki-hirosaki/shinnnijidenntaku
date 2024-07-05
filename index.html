@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二次方程式の解法</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>二次方程式の解法</h1>
+        <form id="quadratic-form">
+            <div class="form-group">
+                <label for="a">a:</label>
+                <input type="number" id="a" name="a" required>
+            </div>
+            <div class="form-group">
+                <label for="b">b:</label>
+                <input type="number" id="b" name="b" required>
+            </div>
+            <div class="form-group">
+                <label for="c">c:</label>
+                <input type="number" id="c" name="c" required>
+            </div>
+            <button type="submit">解を求める</button>
+        </form>
+        <div id="results"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
