@@ -18,8 +18,8 @@ document.getElementById('quadratic-form').addEventListener('submit', function(ev
         let numerator1 = simplifyFraction(-b + sqrtDiscriminant[0], 2 * a);
         let numerator2 = simplifyFraction(-b - sqrtDiscriminant[0], 2 * a);
         if (sqrtDiscriminant[1] !== 1) {
-            numerator1 = [`${numerator1[0]}√${sqrtDiscriminant[1]}`, numerator1[1]];
-            numerator2 = [`${numerator2[0]}√${sqrtDiscriminant[1]}`, numerator2[1]];
+            numerator1[0] = `${numerator1[0]}√${sqrtDiscriminant[1]}`;
+            numerator2[0] = `${numerator2[0]}√${sqrtDiscriminant[1]}`;
         }
         results = `方程式の解は次の通りです:<br>x1 = ${formatFraction(numerator1)}<br>x2 = ${formatFraction(numerator2)}`;
     } else if (discriminant === 0) {
@@ -28,6 +28,9 @@ document.getElementById('quadratic-form').addEventListener('submit', function(ev
     } else {
         let realPart = simplifyFraction(-b, 2 * a);
         let imaginaryPart = simplifyFraction(Math.sqrt(Math.abs(discriminant)), 2 * a);
+        if (imaginaryPart[1] !== 1) {
+            imaginaryPart[0] = `√${Math.abs(discriminant)}`;
+        }
         results = `方程式の解は次の通りです:<br>x1 = ${formatFraction(realPart)} + ${formatFraction(imaginaryPart)}i<br>x2 = ${formatFraction(realPart)} - ${formatFraction(imaginaryPart)}i`;
     }
 
